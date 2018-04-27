@@ -1,4 +1,6 @@
 apply plugin: 'com.android.application'
+apply plugin: "com.github.anolivetree.clojure-android"
+apply plugin: "com.dorongold.task-tree"
 
 android {
     compileSdkVersion 27
@@ -36,4 +38,17 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    implementation "org.clojure-android:clojure:1.7.0-r4"
+    compile "org.clojure-android:clojure:1.7.0-r4"
 }
+
+//compileClojure {
+//    options.aotCompile = true
+//}
+
+clojure {
+    aotCompile = true
+    //directLinking = true
+}
+
