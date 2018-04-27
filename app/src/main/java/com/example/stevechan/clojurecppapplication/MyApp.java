@@ -23,6 +23,8 @@ public class MyApp extends Application {
             Method setContext = dalvikCLclass.getMethod("setContext", Context.class);
             setContext.invoke(null, this);
             Log.i(TAG, "DalvikDynamicClassLoader load clojure ok ............");
+            String histr = RT.var("clojure.core", "inc").invoke(10).toString();
+            Log.i("把Clojure当成Java来用,测试成功! (inc 10) => ", histr);
         } catch (ClassNotFoundException e) {
             Log.i(TAG, "DalvikDynamicClassLoader is not found, probably Skummet is used.");
         } catch (Exception e) {
