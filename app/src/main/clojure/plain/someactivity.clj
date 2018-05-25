@@ -5,8 +5,9 @@
    (com.example.stevechan.clojurecppapplication.R$id)
    (com.example.stevechan.clojurecppapplication.R$layout)
    (javax.xml.bind DatatypeConverter))
-  (:require [org.httpkit.client :as http]
-            [clojure.tools.nrepl.server :as repl])
+  (:require
+   [org.httpkit.client :as http]
+   [clojure.tools.nrepl.server :as repl])
   (:gen-class
    :name "plain.someactivity.MyActivity"
    :exposes-methods {onCreate superOnCreate}
@@ -24,6 +25,8 @@
   (Log/i "clojure" "已启动应用...")
   (System/loadLibrary "native-lib")
   (reset! this-atom this)
+  (let [tv (.findViewById this com.example.stevechan.clojurecppapplication.R$id/sample_text)]
+    (.setText tv (str "Clojure Call Cpp: " (DatatypeConverter/stringFromJNI))))
   (try
     (do
       (Log/i "repl 启动中" "...")
