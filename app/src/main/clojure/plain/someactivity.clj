@@ -3,7 +3,8 @@
    (android.support.v7.app AppCompatActivity)
    (android.util Log)
    (com.example.stevechan.clojurecppapplication.R$id)
-   (com.example.stevechan.clojurecppapplication.R$layout))
+   (com.example.stevechan.clojurecppapplication.R$layout)
+   (javax.xml.bind DatatypeConverter))
   (:require [org.httpkit.client :as http]
             [clojure.tools.nrepl.server :as repl])
   (:gen-class
