@@ -40,12 +40,12 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
     implementation "org.clojure-android:clojure:1.7.0-r4"
-    compile "org.clojure-android:clojure:1.7.0-r4"
+    //compile "org.clojure-android:clojure:1.7.0-r4"
 
     //compile "clj-http:clj-http:3.7.0"
-    compile "http-kit:http-kit:2.2.0"
+    implementation "http-kit:http-kit:2.2.0"
 
-    compile 'org.clojure:tools.nrepl:0.2.10', {
+    implementation 'org.clojure:tools.nrepl:0.2.10', {
         exclude group: 'org.clojure', module: 'clojure'
     }
 
